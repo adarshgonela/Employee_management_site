@@ -6,9 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        echo "ASUS";
-        echo "hello";
-    ?>
+    <?php echo "ASUS";  ?>  <br>
+    <?php echo "Hello";  ?>  <br>
+  
 </body>
 </html>
