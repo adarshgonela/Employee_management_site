@@ -8,6 +8,7 @@
 <body>
     <?php echo "ASUS";  ?>  <br>
     <?php echo "Hello";  ?>  <br>
+    <?php echo "RYZEN";  ?>  <br>
   
 </body>
 </html>
