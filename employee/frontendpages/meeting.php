@@ -1,8 +1,17 @@
-<!-- component -->
-<?php include ('../common/navbar.php'); ?>
-      <?php include ('../common/sidebar.php'); ?>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
-<section class="container mx-auto p-6 font-mono">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meetings</title>
+  <?php include ('../common/header.php')   ?>
+</head>
+<body>
+
+<div class="h-full ml-13 mt-13 mb-10 md:ml-64">
+
+                    <section class="container mx-auto  font-mono p-4 m-9 ">
   <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
     <div class="w-full overflow-x-auto">
       <table class="w-full">
@@ -191,3 +200,15 @@
     </div>
   </div>
 </section>
+                    
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
