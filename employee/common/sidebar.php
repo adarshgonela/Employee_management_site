@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
-   <title>Document</title>
-</head>
-<body>
-<link rel="stylesheet" href="../assets/script.css">
-
- 
-     
-       <!-- Sidebar -->
-        <div class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900 dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
-         <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
+<div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
            <ul class="flex flex-col py-4 space-y-1">
              <li class="px-5 hidden md:block">
                <div class="flex flex-row items-center h-8">
@@ -90,18 +75,3 @@
                </a>
              </li>
            </ul>
-           <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2021</p>
-         </div>
-       </div> 
-       <!-- ./Sidebar -->
-     
-       <!-- <div class="h-full ml-14 mt-14 mb-10 md:ml-64"> -->
-     
-        
-       </div>
-     </div>
-   </div>    
- 
-   <script src="../assets/script.js"></script>
-</body>
-</html>l
