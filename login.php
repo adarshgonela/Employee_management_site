@@ -4,16 +4,7 @@ $email = $_REQUEST['Email'];
 $passkey = $_REQUEST['Password'];
 
 // Database connection details
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "test";
-
-// Connect to the database
-$conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once('conn.php');
 
 // Prepare and execute the SQL query
 $query = "SELECT * FROM employee1 WHERE Email = ? AND Password = ?";
