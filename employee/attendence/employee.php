@@ -1,11 +1,18 @@
 <?php
+include('../redirect/conn.php');
 
+function getAttendences(){
+ global $conn;
+        $sql = "SELECT * FROM attendence";
+    
+    $result = mysqli_query($conn,$sql);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databasename = "ems";
+    $attendences = [];
 
+    while($row = mysqli_fetch_assoc($result)){
+        $attendences[] = $row;
+    }
 
+    return $attendences;
+}
 ?>
-
