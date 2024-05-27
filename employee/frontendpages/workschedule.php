@@ -7,6 +7,11 @@
    <title>Document</title>
 </head>
 <body>
+  <?php
+  include('../workschedule/employee.php');
+  $workschedules=getWorkschedules();
+
+?>
    <!-- component -->
    <?php  include ('../assets/script.css') ?>
 
@@ -33,7 +38,7 @@
       <table class="w-full">
         <thead>
           <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-            <th class="px-4 py-3">id</th>
+            <!-- <th class="px-4 py-3">id</th> -->
             <th class="px-4 py-3">workassign</th>
             <th class="px-4 py-3">givenhours</th>
             <th class="px-4 py-3">takenhours</th>
@@ -41,49 +46,24 @@
           </tr>
         </thead>
         <tbody class="bg-white">
+          <?php 
+              foreach ($workschedules as $workschedule) {
           
+          ?>
           <tr class="text-gray-700">
             <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold text-black">Stevens</p>
-                  <p class="text-xs text-gray-600">Programmer</p>
-                </div>
-              </div>
+             <?php echo $workschedule['workassign'];  ?>
             </td>
-            <td class="px-4 py-3 text-md font-semibold border">do the register page</td>
-            <td class="px-4 py-3 text-sm border">2 hours</td>
-            <td class="px-4 py-3 text-sm border">1 hour 30 minutes</td>
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> Pending </span>
+            <td class="px-4 py-3 text-md font-semibold border"><?php echo $workschedule['givenhours'];  ?>
+           </td>
+            <td class="px-4 py-3 text-sm border"><?php echo $workschedule['takenhours'];  ?></td>
+             <td class="px-4 py-3 text-xs border">
+              <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> <?php echo $workschedule['status'];  ?></span>
             </td>
             
           </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Nora</p>
-                  <p class="text-xs text-gray-600">Designer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 text-md font-semibold border">Do the sign up page</td>
-            <td class="px-4 py-3 text-sm border">3 hours</td>
-            <td class="px-4 py-3 text-sm border">2 hours</td>
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> Nnacceptable </span>
-            </td>
-            
-          </tr>
+        
+          <?php  } ?>
            </tbody>
       </table>
     </div>
