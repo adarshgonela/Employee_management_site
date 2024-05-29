@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <form class="signup-form" action="signupSql.php" method="post">
+        <form class="signup-form" action="../redirect/signupSql.php" method="post">
             <h2>Sign Up</h2>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text"  name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -25,6 +25,7 @@
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="cpassword" required>
+                <input type="hidden" name="signup"> 
             </div>
             <button type="submit">Sign Up</button>
         </form>

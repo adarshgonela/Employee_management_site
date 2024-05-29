@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="forgot.css">
+    <link rel="stylesheet" href="../../assets/forgot.css">
 </head>
 <body>
     <div class="container">
@@ -15,7 +15,7 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <button type="submit">Reset Password</button>
+            <button type="submit">Verify Email</button>
         </form>
     </div>
 </body>

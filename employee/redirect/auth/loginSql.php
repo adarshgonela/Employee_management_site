@@ -1,41 +1,39 @@
-<?php session_start();
-// Get user input
-$email = $_REQUEST['email'];
-$passkey = $_REQUEST['password'];
+<?php  
 
-// Database connection details
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "ems";
+//login login 
+session_start();
+include "../conn.php";
 
-// Connect to the database
-$conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$email = input('email');
+$password = input('password');
+
+if(!$email || !$password){
+	exit();
 }
 
-// Prepare and execute the SQL query
-$query = "SELECT * FROM users WHERE email = ? AND password = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ss", $email, $passkey);
-$stmt->execute();
-$result = $stmt->get_result();
 
-// Check if any rows are returned
-if ($result->num_rows > 0) {
- 
+$sql = "SELECT * FROM users WHERE email='$email'";
+$result = mysqli_query($conn, $sql);
 
-    // Authentication successful
-    // header("Location: );
-    header("Location: ../employee/frontendpages/sample.php");
-    exit();
+if (mysqli_num_rows($result) === 1) {
+    $row = mysqli_fetch_assoc($result);
+
+    // Verifying the password
+    if (password_verify($password, $row['password'])) {
+        // Password is correct
+        $_SESSION['email'] = $row['email'];
+
+echo "successful";
+        
+        exit();
+    } else {
+        // Incorrect password
+        header("Location: ../../auth/index.php?error=Incorrect username or password");
+        exit();
+    }
 } else {
-    // Authentication failed
-    echo "Invalid email or password";
+    // User not found
+    header("Location: ../../auth/index.php?error=Incorrect username or password");
+    exit();
 }
 
-// Close statement and database connection
-$stmt->close();
-$conn->close();
-?>

@@ -1,17 +1,16 @@
 <?php 
 session_start();
-include '../conn.php';
+include ('../redirect/conn.php');
 
 // Initialize an array to hold errors
 $errors = array();
-echo "test";
 // If user signup button is clicked
 if(isset($_POST['signup'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
-    echo "test1";
+   
 
     // Check if passwords match
     if($password !== $cpassword){
@@ -24,7 +23,6 @@ if(isset($_POST['signup'])){
     if(mysqli_num_rows($res) > 0){
         $errors[] = "Email already registered.";
     }
-
     // If no errors, proceed with registration
     if(count($errors) === 0){
         $encpass = password_hash($password, PASSWORD_BCRYPT);
@@ -33,14 +31,9 @@ if(isset($_POST['signup'])){
         $insert_data = "INSERT INTO users (name, email, password)
                         VALUES ('$name', '$email', '$encpass')";
         $data_check = mysqli_query($conn, $insert_data);
-        header("Location: ../../auth/index.php?error=Successfully registered, Please login");
+        // header("Location: ../redirect/signup.php?login successful");
+   
     }
-    // ----------------------------------------------------------------
-    // If there are errors, redirect back with error messages
-    if(count($errors) > 0){
-        $error_message = implode(", ", $errors);
-        header("Location: ../../auth/register.php?error=" . urlencode($error_message));
-        exit();
-    }
+
 }
 ?>

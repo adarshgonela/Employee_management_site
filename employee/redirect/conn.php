@@ -1,16 +1,28 @@
-<?php 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "ems";
+<?php  
+date_default_timezone_set("Asia/Calcutta");
 
-// Connect to the database
-$conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    echo"connected successfully";
+$sname = "localhost";
+$uname = "root";
+$password = "";
+$db_name = "ems";
+
+$conn = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$conn) {
+	echo "Connection Failed!";
+	exit();
 }
-else{
-    echo "connection failed";
-    die("Connection failed: " . $conn->connect_error);
+
+function input($key) {
+	global $_REQUEST;
+	if(isset($_REQUEST[$key]) && $_REQUEST[$key] && trim($_REQUEST[$key])!=""){
+		return trim($_REQUEST[$key]);
+	}
+	return null;
+	
 }
-?>
+
+$logoutLimit = 10;
+$present = date('H:i');
+$date = date('Y-m-d');
+
