@@ -32,7 +32,7 @@ if(isset($_POST['signup'])){
                         VALUES ('$name', '$email', '$encpass')";
         $data_check = mysqli_query($conn, $insert_data);
         // header("Location: ../redirect/signup.php?login successful");
-   
+        header("Location:../redirect/login.php");
     }
 
 }
