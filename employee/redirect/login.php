@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="login-form" action="redirect/login.php" method="post">
+        <form class="login-form" action="loginSql.php" method="post">
             <h2>Login</h2>
             <div class="form-group">
                 <label for="email">Email:</label>

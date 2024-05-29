@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="signup-form" action="redirect/signup.php" method="post">
+        <form class="signup-form" action="signupSql.php" method="post">
             <h2>Sign Up</h2>
             <div class="form-group">
                 <label for="username">Username:</label>

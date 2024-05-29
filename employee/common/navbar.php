@@ -14,7 +14,6 @@
             <li>
                 <button
                  aria-hidden="true"
-                 
                  class="group p-2 transition-colors duration-200 rounded-full shadow-md bg-blue-200 hover:bg-blue-200 dark:bg-gray-50 dark:hover:bg-gray-200 text-gray-900 focus:outline-none">
                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -23,7 +22,22 @@
                 </button>
             </li>
             <li>
-               <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
+               <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700">
+               <!-- <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="img-xs rounded-circle ms-2" src="assets/images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal"> name </span></a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+            <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">
+                <p class="mb-1 mt-3">name</p>
+                <p class="font-weight-light text-muted mb-0">email</p>
+            </div>
+            <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+            <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i>Profile Settings</a>
+            <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Logout</a>
+            </div>
+        </li> -->
+               </div>
              </li>
 
              <li>
