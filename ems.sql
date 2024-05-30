@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2024 at 10:16 AM
+-- Generation Time: May 30, 2024 at 09:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -39,7 +39,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `name`, `password`) VALUES
-(1, 'adarsh@gmail.com', 'as', '$2y$10$J8yyeTF6uXUC9SpG4WE1Fe80Xo.3fYm46V8ftF3iTEzvWyhmSm00u');
+(1, 'adarsh@gmail.com', 'as', '$2y$10$J8yyeTF6uXUC9SpG4WE1Fe80Xo.3fYm46V8ftF3iTEzvWyhmSm00u'),
+(2, 'khan@gmail.com', 'khan', '$2y$10$d1OZjpiDn0fewd1fofZbguugK8PDnfZlAohleW2EtDAUZyyAP.iE6'),
+(3, 'donn@gmail.com', 'donn', '$2y$10$1d6LkYAGU6krI1BkNFy5zO2NFX7AkrL6Qv76SVO29CA.h5lgbC/vm'),
+(4, 'abc@gmail.com', 'abc', ''),
+(5, 'a@gmail.com', 'a', '1'),
+(6, 'john@gmail.com', 'john', '1'),
+(7, 'b@gmail.com', 'b', '1'),
+(8, 'l@gmail.com', 'l', '1');
 
 -- --------------------------------------------------------
 
@@ -89,7 +96,7 @@ ALTER TABLE `workschedule`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `workschedule`
