@@ -8,12 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <form class="forgot-password-form" action="/employee/redirect/auth/forgotSql.php" method="post">
+        <form class="forgot-password-form" action="../redirect/auth/forgotSql.php" method="post">
             <h2>Forgot Password</h2>
             <p>Please enter your email address. We will send you a link to reset your password.</p>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required >
             </div>
             <button type="submit">Verify Email</button>
         </form>
