@@ -8,14 +8,18 @@ body {
 .container {
     max-width: 400px;
     margin: 50px auto;
-    padding: 50px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-form h2 {
+.forgot-password-form h2 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.forgot-password-form p {
     margin-bottom: 20px;
 }
 
@@ -28,19 +32,11 @@ label {
     font-weight: bold;
 }
 
-input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.forgot-password {
-    display: block;
-    text-align: right;
-    color: #007bff;
-    text-decoration: none;
 }
 
 button[type="submit"] {
@@ -55,7 +51,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
-}
-#h1{
-    color: #007bff;
 }
