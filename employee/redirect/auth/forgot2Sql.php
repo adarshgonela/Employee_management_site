@@ -1,21 +1,19 @@
 <?php
 session_start();
+include('../conn.php');
 $email = $_SESSION['email'];
-$password = $_SESSION['password'];
-echo "hii";
-// if(!$email){
-//     echo "helloo";
-//     header("Location:../redirect/login.php");
-//     exit();
-// }
-include_once("../redirect/conn.php");
-echo "hii";
-$sql = "UPDATE users set as password='$password' WHERE email='$email'";
-$result = mysqli_query($conn, $sql);
 
-$user = mysqli_fetch_assoc($result);
+$password = $_REQUEST['password'];
+$cpassword = $_REQUEST['cpassword'];
 
 
-header("Location:../redirect/forgot2.php");
-
-?>
+if ($password === $cpassword) {
+    $sql = "UPDATE users SET password='$password' WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        header("Location:../login.php ? password updated successfully");
+        exit;
+    }
+} else {
+    header("Location:../forgot2.php ? enter both password same");
+}
