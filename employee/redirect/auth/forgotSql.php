@@ -1,6 +1,13 @@
 <?php
 session_start();
-$email = $_REQUEST['email'];
+
+$email = $_REQUEST['email1'];
+
+
+if (!isset($_POST['email'])) {
+    $email=$_POST['email'];
+ 
+}
 
 include("../conn.php");
 $sql = "SELECT * FROM users WHERE email='$email'";
@@ -8,7 +15,10 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 if ($email == $row['email']) {
-    header("Location: ../forgot2.php ? email verified");
+
+
+
+    header("Location: ../forgot2.php ? email verified".$email);
 } else {
 
     header("Location: ../login.php? incorrect email enter valid email");
