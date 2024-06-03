@@ -1,14 +1,21 @@
-<?php
-session_start();
-$email = $_SESSION['email'];
-if(!$email){
-    echo "not logged";
-    header("Location:../redirect/login.php");
+<?php 
+
+   session_start();
+   include "../redirect/conn.php";
+   if(!isset($_SESSION['email'])) {
+    // If user is not logged in, redirect to login page
+    header("Location: ../auth/index.php?error=Please login to View Page");
     exit();
-}
-include_once("../redirect/conn.php");
+    }
+    $email = $_SESSION['email'];
 
-$sql = "SELECT * FROM users WHERE email='$email'";
-$result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
 
-$user = mysqli_fetch_assoc($result);
+    $user = mysqli_fetch_assoc($result);
+
+    $name =$user['name']; 
+    $email = $user['email'];
+
+     
+?>

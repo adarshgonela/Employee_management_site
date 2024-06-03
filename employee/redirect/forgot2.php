@@ -7,10 +7,14 @@
     <title>Forgot Password</title>
     <link rel="stylesheet" href="../assets/forgot2.css">
 </head>
+<?php 
+$email1=$_GET["email"];
+// echo $email1;
 
+?>
 <body>
     <div class="container">
-        <form class="forgot-password-form" action="../redirect/auth/forgot2Sql.php" method="post">
+        <form class="forgot-password-form" action="../redirect/auth/forgot2Sql.php?email=<?php echo htmlspecialchars($email1); ?>" method="post">
             <h2>Reset Password</h2>
             <p>Create your new password.</p>
             <div class="form-group">

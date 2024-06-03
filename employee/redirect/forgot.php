@@ -9,10 +9,7 @@
 </head>
 
 <body>
-    <?php
-    //session_start(); 
-    //$user=$_SESSION['email'];
-    ?>
+   
     <div class="container">
         <form class="forgot-password-form" action="../redirect/auth/forgotSql.php" method="post">
             <h2>Forgot Password</h2>
