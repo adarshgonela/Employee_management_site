@@ -68,16 +68,16 @@ $attendences=getAttendences();
             <td class="px-4 py-3 text-xs border">
               <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> <?php  echo $attendence['status'] ?> </span>
             </td>
-            <td class="px-4 py-3 text-sm border"><?php  echo $attendence['logO
-            ut'] ?></td>
+            <td class="px-4 py-3 text-sm border"><?php  echo $attendence['logOut'] ?></td>
           </tr>
     
           <?php 
           }
           ?>
         </tbody>
-      </table>
+      </table>     
     </div>
+    
   </div>
 </section>
 </div>
