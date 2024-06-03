@@ -1,15 +1,15 @@
 <?php 
 session_start();
-include ('../redirect/conn.php');
+include ('../conn.php');
 
 // Initialize an array to hold errors
-$errors = array();
+$errors = [];
 // If user signup button is clicked
 if(isset($_POST['signup'])){
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
+    $name =  $_POST['name'];
+    $email = $_POST['email'];
+    $password =  $_POST['password'];
+    $cpassword =  $_POST['cpassword'];
    
 
     // Check if passwords match
@@ -25,14 +25,17 @@ if(isset($_POST['signup'])){
     }
     // If no errors, proceed with registration
     if(count($errors) === 0){
-        $encpass = password_hash($password, PASSWORD_BCRYPT);
-        $code = rand(999999, 111111);
+        
         $status = "notverified";
         $insert_data = "INSERT INTO users (name, email, password)
-                        VALUES ('$name', '$email', '$encpass')";
+                        VALUES ('$name', '$email', '$password')";
         $data_check = mysqli_query($conn, $insert_data);
         // header("Location: ../redirect/signup.php?login successful");
-        header("Location:../redirect/login.php");
+        header("Location:../login.php");
+    }
+    else{
+        header("Location:../signup.php");
+
     }
 
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="signup-form" action="../redirect/signupSql.php" method="post">
+        <form class="signup-form" action="auth/signupSql.php" method="post">
             <h2>Sign Up</h2>
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -29,6 +29,15 @@
             </div>
             <button type="submit">Sign Up</button>
         </form>
+        <br><br>
+        <span class="ml-2" id="h1"
+            >You have an account?
+            <a
+              href="login.php" id="h2"
+              class="text-xs ml-2 font-semibold"
+              >Login here</a
+            ></span
+          >
     </div>
 </body>
 </html>

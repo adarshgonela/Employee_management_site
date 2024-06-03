@@ -19,10 +19,11 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <a href="#" class="forgot-password">Forgot Password?</a>
+                <a href="forgot.php" class="forgot-password">Forgot Password?</a>
             </div>
             <button type="submit">Login</button>
         </form>
+        <p class="mt-6 text-sm text-center text-gray-400">Don&#x27;t have an account yet? <a href="../redirect/signup.php" id="h1" class="focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
     </div>
 </body>
 </html>

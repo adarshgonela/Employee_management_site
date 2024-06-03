@@ -19,7 +19,6 @@ function input($key) {
 		return trim($_REQUEST[$key]);
 	}
 	return null;
-	
 }
 
 $logoutLimit = 10;
