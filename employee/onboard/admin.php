@@ -4,9 +4,7 @@ include_once('../../Admin/frontendpages/workschedule.php');
 global $conn;
 
 
-
-
-if (isset($_POST['workschedule'])) {
+if (isset($_POST['onboard'])) {
 
     $name = $_REQUEST['name'];
     $startdate = $_REQUEST['startdate'];
