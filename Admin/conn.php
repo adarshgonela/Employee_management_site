@@ -25,3 +25,6 @@ $logoutLimit = 10;
 $present = date('H:i');
 $date = date('Y-m-d');
 
+?>
+
+ 
