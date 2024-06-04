@@ -42,7 +42,6 @@
             <select class="form-select" id="exampleSelectid">
               <?php
               foreach ($ids as $id) {
-
               ?>
                 <option><?php echo $id['user_id'] ?></option>
               <?php } ?>
