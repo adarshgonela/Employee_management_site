@@ -1,7 +1,7 @@
 <?php 
 
    session_start();
-//    include "../conn.php";
+ include "../conn.php";
    if(!isset($_SESSION['email'])) {
     // If user is not logged in, redirect to login page
     header("Location: ../auth/index.php?error=Please login to View Page");
