@@ -43,6 +43,7 @@
             <th class="px-4 py-3">givenhours</th>
             <th class="px-4 py-3">takenhours</th>
             <th class="px-4 py-3">status</th>
+            <th class="px-4 py-3">Details</th>
           </tr>
         </thead>
         <tbody class="bg-white">
