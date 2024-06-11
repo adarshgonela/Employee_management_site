@@ -23,6 +23,16 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
+				<label for="dropdown">Role :*</label>
+				<select class="option" required="required" name="role">
+                    <option value="select role">Selected Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+									
+			</div>
+            
+            <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="cpassword" required>
                 <input type="hidden" name="signup"> 

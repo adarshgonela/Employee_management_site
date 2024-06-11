@@ -53,3 +53,16 @@ button[type="submit"]:hover {
 #h2{
     color: #0056b3;
 }
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+option{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
