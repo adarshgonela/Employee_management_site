@@ -5,16 +5,15 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
    <title>Document</title>
-
 </head>
 <body>
+  <?php
+  include_once('../conn.php');
+  include_once('../common/header.php');
+  include('../../employee/attendence/admin.php');
+  $rows = getAttendance();
 
-<?php 
-include('../attendence/employee.php');
-
-$attendences=getAttendences();
 ?>
-
    <!-- component -->
    <?php  include ('../assets/script.css') ?>
 
@@ -41,41 +40,38 @@ $attendences=getAttendences();
       <table class="w-full">
         <thead>
           <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-            <th class="px-4 py-3">Name</th>
-            <!-- <th class="px-4 py-3">Age</th> -->
-            <th class="px-4 py-3">Status</th>
-            <th class="px-4 py-3">time</th>
+            <!-- <th class="px-4 py-3">id</th> -->
+            <th class="px-4 py-3">date</th>
+            <th class="px-4 py-3">login time</th>
+            <th class="px-4 py-3">logout time</th>
+            <th class="px-4 py-3">details</th>
+            <th class="px-4 py-3">status</th>
+
           </tr>
         </thead>
         <tbody class="bg-white">
-          <?php  
-          foreach ($attendences as $attendence) {
-          ?>
+        <?php
+                            foreach($rows as $row){
+                          ?>
           <tr class="text-gray-700">
             <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold text-black"><?php  echo $attendence['name'] ?></p>
-                  <p class="text-xs text-gray-600"><?php  echo $attendence['loginTime'] ?></p>
-                </div>
-              </div>
+             <?php echo $row['date'];  ?>
             </td>
-            <!-- <td class="px-4 py-3 text-ms font-semibold border">22</td> -->
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> <?php  echo $attendence['status'] ?> </span>
+            <td class="px-4 py-3 text-md font-semibold border"><?php echo $row['firstLogin'];  ?>
+           </td>
+            <td class="px-4 py-3 text-sm border"><?php echo $row['lastLogin'];  ?></td>
+            <td class="px-4 py-3 text-sm border"><?php echo $row['minutes'];  ?></td>
+            
+             <td class="px-4 py-3 text-xs border">
+              <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> <?php echo $row['status'];  ?></span>
             </td>
-            <td class="px-4 py-3 text-sm border"><?php  echo $attendence['logO
-            ut'] ?></td>
+            <td>
+                            <a href='#' type="button" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                            </td>
           </tr>
-    
-          <?php 
-          }
-          ?>
-        </tbody>
+        
+          <?php  } ?>
+           </tbody>
       </table>
     </div>
   </div>
@@ -83,6 +79,6 @@ $attendences=getAttendences();
 </div>
 
         <!-- main ends -->
- <?php  include('../assets/script.js')  ?>
+ <?php   include('../assets/script.js')  ?>
 </body>
 </html>

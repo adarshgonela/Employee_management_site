@@ -5,10 +5,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
    <title>Document</title>
-
 </head>
 <body>
-
 <?php 
 include('../attendence/employee.php');
 
@@ -68,16 +66,16 @@ $attendences=getAttendences();
             <td class="px-4 py-3 text-xs border">
               <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> <?php  echo $attendence['status'] ?> </span>
             </td>
-            <td class="px-4 py-3 text-sm border"><?php  echo $attendence['logO
-            ut'] ?></td>
+            <td class="px-4 py-3 text-sm border"><?php  echo $attendence['logOut'] ?></td>
           </tr>
     
           <?php 
           }
           ?>
         </tbody>
-      </table>
+      </table>     
     </div>
+    
   </div>
 </section>
 </div>

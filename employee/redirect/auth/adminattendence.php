@@ -1,6 +1,6 @@
 <?php
 //include "../conn.php";
-// include "../redirect/conn.php";
+include "../redirect/conn.php";
 
 // Assuming the dates are in 'Y-m-d' format
 function generateDateRange($startDate, $endDate, $format = 'Y-m-d') {
@@ -16,23 +16,19 @@ function generateDateRange($startDate, $endDate, $format = 'Y-m-d') {
     return $dates;
 }
 
-function getAttendance($filter=''){
-    global $conn, $_SESSION;
-    $email = $_SESSION['email'];
+function getAttendance($email='',$filter=''){
+    global $conn;
     
     if ($filter) {
-        $sql = "SELECT * FROM attendance WHERE email = '$email' AND $filter ORDER BY `date` DESC LIMIT 30";
+        $sql = "SELECT * FROM attendance WHERE $filter ORDER BY date DESC LIMIT 30";
     } else {
-        $sql = "SELECT * FROM attendance WHERE email = '$email' ORDER BY `date` DESC LIMIT 30";
+        $sql = "SELECT * FROM attendance WHERE email = '$email' ORDER BY date DESC LIMIT 30";
     }
     $result = mysqli_query($conn, $sql);
     
     $attendance = [];
     while ($row = mysqli_fetch_assoc($result)) {
         $attendance[] = $row;
-    }
-    if($attendance){
-        $attendance[0]['lastLogin'] = "not updated";
     }
     
     // Find the date range to cover
