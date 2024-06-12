@@ -14,9 +14,9 @@ if(!$email || !$password){
 }
     $_SESSION['name'] = $row['name'];
     $_SESSION['email'] = $row['email'];
-    $_SESSION['role'] = $row['role'];
+   
 
-
+echo $row['role'];
 $sql = "SELECT * FROM users WHERE email='$email'";
 $result = mysqli_query($conn, $sql);
 
@@ -28,21 +28,24 @@ if (mysqli_num_rows($result) === 1) {
     if ( $password == $row['password']) {
         // Password is correct
         $_SESSION['email'] = $row['email']; 
-        header("Location: ../../frontendpages/sample.php");     
-        exit();
+        $_SESSION['role'] = $row['role'];
+        if(strtolower($row['role']) == 'employee') {
+       
+             header("Location: ../../frontendpages/sample.php");
+         }
+         else{
+             header("Location:../../../Admin/frontendpages/sample.php");
+         }
+         exit();
+       // header("Location: ../../frontendpages/sample.php");     
+       // exit();
     } else {
         // Incorrect password
         header("Location: ../login.php?error=Incorrect username or password");
         exit();
     }
 
-    if(strtolower($row['role']) == 'employee') {
-        header("Location: ../frontendpages/sample.php");
-    }
-    else{
-        header("Location: ../Admin/frontendpages/sample.php");
-    }
-    exit();
+   
 } else {
     // Incorrect password
     header("Location: ../../auth/index.php?error=Incorrect username or password");
