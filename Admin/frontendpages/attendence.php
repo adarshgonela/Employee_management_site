@@ -8,11 +8,10 @@
 </head>
 <body>
   <?php
-  include_once('../conn.php');
+ // include_once('../Employee_management_site/conn.php');
   include_once('../common/header.php');
-  include('../../employee/attendence/admin.php');
+  include_once('../../employee\attendence\admin.php');
   $rows = getAttendance();
-
 ?>
    <!-- component -->
    <?php  include ('../assets/script.css') ?>

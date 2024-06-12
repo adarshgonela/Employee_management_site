@@ -1,19 +1,19 @@
 <?php
 //include "../conn.php";
-include "../../Admin/conn.php";
-// include "../redirect/conn.php";
-
 // Assuming the dates are in 'Y-m-d' format
 function generateDateRange($startDate, $endDate, $format = 'Y-m-d') {
     $dates = [];
     $current = strtotime($startDate);
     $end = strtotime($endDate);
+
     while ($current <= $end) {
         $dates[] = date($format, $current);
         $current = strtotime("+1 day", $current);
     }
+
     return $dates;
 }
+
 function getAttendance($filter=''){
     global $conn, $_SESSION;
     $email = $_SESSION['email'];

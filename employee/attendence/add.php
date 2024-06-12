@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "../../Admin/conn.php";
 
 $email = $_SESSION['email'];
 $present = date('H:i');

@@ -23,6 +23,18 @@ if (mysqli_num_rows($result) === 1) {
     if ( $password == $row['password']) {
         // Password is correct
         $_SESSION['email'] = $row['email']; 
+
+
+        $sql = "SELECT * FROM attendance WHERE email='$email' and date='$date'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) === 0) {
+
+            $insert_data = "INSERT INTO attendance ( `email`, `date`,`firstLogin`) VALUES ('$email', '$date', '$present')";
+            mysqli_query($conn, $insert_data);
+        }
+
+
         header("Location: ../../frontendpages/sample.php");     
         exit();
     } else {
