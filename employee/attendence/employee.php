@@ -7,15 +7,12 @@ function generateDateRange($startDate, $endDate, $format = 'Y-m-d') {
     $dates = [];
     $current = strtotime($startDate);
     $end = strtotime($endDate);
-
     while ($current <= $end) {
         $dates[] = date($format, $current);
         $current = strtotime("+1 day", $current);
     }
-
     return $dates;
 }
-
 function getAttendance($filter=''){
     global $conn, $_SESSION;
     $email = $_SESSION['email'];
@@ -32,7 +29,7 @@ function getAttendance($filter=''){
         $attendance[] = $row;
     }
     if($attendance){
-        $attendance[0]['lastLogin'] = "not updated";
+        $attendance[0]['lastLogin'] = "Not updated";
     }
     
     // Find the date range to cover
@@ -58,7 +55,7 @@ function getAttendance($filter=''){
                 'email' => $email,
                 'date' => $date,
                 'firstLogin' => 'Not Logged',
-                'lastLogin' => 'Not Logged',
+                'lastLogin' => ' Not Logged',
                 'minutes' => '0',
                 'status' => 'absent' // or any default value you want to set
             ];
