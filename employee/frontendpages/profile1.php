@@ -5,12 +5,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
    <title>Document</title>
- <?php include('../common/header.php') ?>
 </head>
 <body>
-<?php
-  include('../meetings/employee.php');
-  $meetings=getmeetings();
+  <?php
+  include('../redirect/auth/profilesql1.php');
+  $profiles=getprofiles();
 
 ?>
    <!-- component -->
@@ -36,39 +35,36 @@
  <section class="container mx-auto  font-mono p-4 m-9 ">
   <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
     <div class="w-full overflow-x-auto">
-    
       <table class="w-full">
         <thead>
           <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-            <th class="px-4 py-3">user_id</th>
-            <th class="px-4 py-3">Meeting Time</th>
-            <th class="px-4 py-3">Meeting Date</th>
-            <th class="px-4 py-3">Topic</th>
+            <!-- <th class="px-4 py-3">id</th> -->
+            <th class="px-4 py-3">email</th>
+            <th class="px-4 py-3">mobile</th>
+            <th class="px-4 py-3">age</th>
+            <th class="px-4 py-3">location</th>
           </tr>
         </thead>
         <tbody class="bg-white">
-        <?php 
-           foreach ($meetings as $meeting){
-        ?>
+          <?php 
+              foreach ($profiles as $profile) {
+          
+          ?>
           <tr class="text-gray-700">
             <td class="px-4 py-3 border">
-            <?php echo $meeting['user_id'];  ?>
+             <?php echo $profile['email'];  ?>
             </td>
-
-            <td class="px-4 py-3 text-xs border">
-            <?php echo $meeting['Meeting_Time'];  ?>
+            <td class="px-4 py-3 text-md font-semibold border"><?php echo $profile['age'];  ?>
+           </td>
+            <td class="px-4 py-3 text-sm border"><?php echo $profile['mobile'];  ?></td>
+             <td class="px-4 py-3 text-xs border">
+              <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> <?php echo $profile['location'];  ?></span>
             </td>
-
-            <td class="px-4 py-3 text-sm border">
-            <?php echo $meeting['Meeting_Date'];  ?>
-            </td>
-
-            <td class="px-4 py-3 text-sm border">
-            <?php echo $meeting['Topic'];  ?>
-            </td>
+            
           </tr>
+        
           <?php  } ?>
-        </tbody>
+           </tbody>
       </table>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-<script>
+  <script>
   const setup = () => {
     const getTheme = () => {
       if (window.localStorage.getItem('dark')) {
@@ -18,7 +18,7 @@
       toggleTheme() {
         this.isDark = !this.isDark
         setTheme(this.isDark)
-      },
+      }
     }
   }
-</script>
+  </script>

@@ -21,7 +21,7 @@ $ids = getIDs();
      <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
  
        <!-- Header -->
-       <?php  include_once('../common/navbar.php');  ?>
+       <?php  include('../common/navbar.php');  ?>
        <!-- ./Header -->
      
        <!-- Sidebar -->
@@ -49,7 +49,7 @@ $ids = getIDs();
                     <?php
               foreach ($ids as $id) {
               ?>
-                        <option class="text-xl font-semibold mb-4  text-sm"><?php echo $id['user_id'] ?></option>
+                        <option class="text-xl font-semibold mb-4  text-sm"><?php echo $id['id'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
