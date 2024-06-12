@@ -12,13 +12,13 @@ if (!$conn) {
 	echo "Connection Failed!";
 	exit();
 }
-function input($key) {
-	global $_REQUEST;
-	if(isset($_REQUEST[$key]) && $_REQUEST[$key] && trim($_REQUEST[$key])!=""){
-		return trim($_REQUEST[$key]);
-	}
-	return null;
-}
+// function input($key) {
+// 	global $_REQUEST;
+// 	if(isset($_REQUEST[$key]) && $_REQUEST[$key] && trim($_REQUEST[$key])!=""){
+// 		return trim($_REQUEST[$key]);
+// 	}
+// 	return null;
+// }
 
 
 $logoutLimit = 10;
