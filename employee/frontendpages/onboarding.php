@@ -42,10 +42,10 @@
       <table class="w-full">
         <thead>
           <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-            <th class="px-4 py-3">Name</th>
-            <th class="px-4 py-3">Age</th>
+            <th class="px-4 py-3">name</th>
+            <th class="px-4 py-3">startdate</th>
             <th class="px-4 py-3">Status</th>
-            <th class="px-4 py-3">Date</th>
+            <th class="px-4 py-3">onboardingtemplate</th>
 
           </tr>
         </thead>
@@ -66,11 +66,11 @@
                 </div>
               </div>
             </td>
-            <td class="px-4 py-3 text-ms font-semibold border"><?php echo $board['age'] ?></td>
+            <td class="px-4 py-3 text-ms font-semibold border"><?php echo $board['startdate'] ?></td>
             <td class="px-4 py-3 text-xs border">
               <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> <?php echo $board['status'] ?> </span>
             </td>
-            <td class="px-4 py-3 text-sm border"><?php echo $board['date'] ?></td>
+            <td class="px-4 py-3 text-sm border"><?php echo $board['onboardingtemplate'] ?></td>
           </tr>
          <?php
          } 

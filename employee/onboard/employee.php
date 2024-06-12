@@ -2,7 +2,7 @@
 
 function getonboards(){
  global $conn;
-        $sql = "SELECT * FROM onboard";
+        $sql = "SELECT * FROM onboarding";
     
     $result = mysqli_query($conn,$sql);
 

@@ -31,13 +31,16 @@
        <!-- main starts -->
        <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
 <!-- paste code here you want to set in main  -->
-
+<?php 
+include('../frontendpages/dropdownSql.php');
+$ids=getIDs();
+?>
 <div class="bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
     <div class="container mx-auto p-4">
         <div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
             <h1 class="text-xl font-semibold mb-4 text-sm">onboard</h1>
             <p class="text-sm mb-6">Use a permanent address where you can receive mail.</p>
-            <form action="../../employee/workschedule/admin.php"  method="post">
+            <form action="../../employee/onboard/admin.php"  method="post">
             <div class="mb-4">
          
                     <select class="border p-2 rounded w-full text-sm" name="user_id">
@@ -45,7 +48,7 @@
                     <?php
               foreach ($ids as $id) {
               ?>
-                        <option class="text-xl font-semibold mb-4  text-sm"><?php echo $id['user_id'] ?></option>
+                        <option class="text-xl font-semibold mb-4  text-sm"><?php echo $id['id'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
