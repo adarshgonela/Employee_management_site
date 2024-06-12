@@ -16,7 +16,7 @@
 
     $name =$user['name']; 
     $email = $user['email'];
-    $userId=$user['user_id'];
+   
 
      
 ?>
