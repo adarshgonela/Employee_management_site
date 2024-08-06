@@ -7,6 +7,7 @@ if (isset($_REQUEST['submit'])) {
     // Generate a unique token
     // Store the token in the database with a timestamp
     // Send an email to the user with the reset link
+    //echo "test";
 }
 
 include_once('conn.php');
